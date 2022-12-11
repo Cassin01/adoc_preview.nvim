@@ -3,11 +3,11 @@ import { readFileStr } from "https://deno.land/std@0.55.0/fs/read_file_str.ts";
 import { Server } from "https://deno.land/x/socket_io@0.1.1/mod.ts";
 
 async function getHtml(): Promise<any> {
-  const html = await readFileStr(
+  const html = await readTextFile(
     "./routes/index.html",
-    {
-      encoding: "utf8",
-    },
+    // {
+    //   encoding: "utf8",
+    // },
   ).catch((err) => {
     console.log(err);
     return "failed to read a file";
