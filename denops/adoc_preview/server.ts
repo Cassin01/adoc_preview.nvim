@@ -17,7 +17,7 @@ async function getHtml(): Promise<any> {
 }
 
 const addr = ":8080";
-console.log(`HTTP server listening on http://localhost${addr}`);
+// console.log(`HTTP server listening on http://localhost${addr}`);
 
 const _bundled_adoc = Deno.readTextFileSync(
   new URL("./routes/sock.js", import.meta.url),
