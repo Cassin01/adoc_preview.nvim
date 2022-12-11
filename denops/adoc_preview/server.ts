@@ -20,7 +20,7 @@ const addr = ":8080";
 // console.log(`HTTP server listening on http://localhost${addr}`);
 
 const _bundled_adoc = Deno.readTextFileSync(
-  new URL("./adoc_preview/routes/sock.js", import.meta.url),
+  new URL("./routes/sock.js", import.meta.url),
 );
 
 const io = new Server();
