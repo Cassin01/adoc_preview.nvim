@@ -23,6 +23,10 @@ const addr = ":8080";
 const _bundled_adoc = Deno.readTextFileSync(
   new URL("./routes/sock.js", import.meta.url),
 );
+const _main_body = Deno.readTextFileSync(
+  new URL("./routes/index.html", import.meta.url),
+);
+
 
 const io = new Server();
 io.on("", (socket) => {
@@ -47,7 +51,8 @@ async function handler(req: Request) {
   const req_g = req_cnd(req, "GET");
   if (req_g("/")) {
     // console.log((new URLPattern(req.url)).pathname)
-    return new Response(html.html, {
+    return new Response(_main_body, {
+      status: 200,
       headers: { "content-type": "text/html; charset=utf-8" },
     });
   } else if (req_g("/ws")) {
