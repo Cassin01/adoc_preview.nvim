@@ -1,6 +1,6 @@
 import { serve } from "https://deno.land/std@0.114.0/http/server.ts";
 import { readFileStr } from "https://deno.land/std@0.55.0/fs/read_file_str.ts";
-import { SocketIO } from "https://deno.land/x/socket_io@0.1.1/mod.ts";
+import { Server } from "https://deno.land/x/socket_io@0.1.1/mod.ts";
 
 async function getHtml(): Promise<any> {
   const html = await readFileStr(
@@ -23,7 +23,7 @@ const _bundled_adoc = Deno.readTextFileSync(
   new URL("./routes/sock.js", import.meta.url),
 );
 
-const io = new SocketIO();
+const io = new Server();
 io.on("", (socket) => {
   console.log(`socket ${socket.id} connected`);
 
