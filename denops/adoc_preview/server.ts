@@ -4,7 +4,7 @@ import { Server } from "https://deno.land/x/socket_io@0.1.1/mod.ts";
 
 async function getHtml(): Promise<any> {
   const html = await readFileStr(
-    "./routes/index.html",
+    "./adoc_preview/routes/index.html",
     {
       encoding: "utf8",
     },
