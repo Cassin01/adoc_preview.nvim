@@ -90,6 +90,6 @@ const server = {
 export default server;
 
 function _test() {
-  console.log(__dirname)
+  console.log(Deno.cwd());
 }
 _test();
