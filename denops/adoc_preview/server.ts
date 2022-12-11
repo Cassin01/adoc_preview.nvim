@@ -2,20 +2,6 @@ import { serve } from "https://deno.land/std@0.114.0/http/server.ts";
 import { readFileStr } from "https://deno.land/std@0.55.0/fs/read_file_str.ts";
 import { Server } from "https://deno.land/x/socket_io@0.1.1/mod.ts";
 
-async function getHtml(): Promise<any> {
-  const html = await readTextFile(
-    "./routes/index.html"
-  );
-    // {
-    //   encoding: "utf8",
-    // },
-  // ).catch((err) => {
-  //   console.log(err);
-  //   return "failed to read a file";
-  // });
-
-  return { html };
-}
 
 const addr = ":8080";
 // console.log(`HTTP server listening on http://localhost${addr}`);
@@ -45,8 +31,6 @@ function req_cnd(req: Request, method) {
   }
 }
 
-const html = await getHtml();
-// const jss = await getJs();
 async function handler(req: Request) {
   const req_g = req_cnd(req, "GET");
   if (req_g("/")) {
