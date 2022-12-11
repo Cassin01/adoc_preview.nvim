@@ -92,4 +92,4 @@ export default server;
 function _test() {
   console.log(__dirname)
 }
-test();
+_test();
