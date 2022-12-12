@@ -1,7 +1,8 @@
-import { serve } from "https://deno.land/std@0.114.0/http/server.ts";
-import { readFileStr } from "https://deno.land/std@0.55.0/fs/read_file_str.ts";
-import { Server } from "https://deno.land/x/socket_io@0.1.1/mod.ts";
-
+// import { serve } from "https://deno.land/std@0.114.0/http/server.ts";
+// import { readFileStr } from "https://deno.land/std@0.55.0/fs/read_file_str.ts";
+// import { Server } from "https://deno.land/x/socket_io@0.1.1/mod.ts";
+// import { EventEmitter } from "https://deno.land/x/eventemitter@1.2.1/mod.ts";
+import { serve, readFileStr, Server, EventEmitter } from "./deps.ts";
 
 const addr = ":8080";
 // console.log(`HTTP server listening on http://localhost${addr}`);
@@ -79,7 +80,7 @@ const server = {
 
 export default server;
 
-function _test() {
-  console.log(Deno.cwd());
-}
-_test();
+// function _test() {
+//   console.log(Deno.cwd());
+// }
+// _test();
