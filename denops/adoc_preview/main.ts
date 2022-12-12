@@ -8,5 +8,8 @@ export async function main(denops: Denops): Promise<void> {
         async core(arg: unknown): Promise<void> {
             await Server.setup();
         }
+        async cursorMoved(arg: unknown): Promise<void> {
+            await Server.cursor_moved();
+        }
     }
 }
